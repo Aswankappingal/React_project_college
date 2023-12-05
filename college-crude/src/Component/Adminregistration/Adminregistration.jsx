@@ -7,6 +7,7 @@ import { useState } from 'react'
 
 const Adminregistration = () => {
   const navigate = useNavigate()
+  
 
 
   const [val, setval] = useState({

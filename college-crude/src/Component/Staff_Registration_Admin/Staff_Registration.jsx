@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Staff_Registartion.css'
 import { useState } from 'react'
-// import { Navigate, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Staff_Registration = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
+
+    const [username,setUsername] = useState("");
+    useEffect(() => {
+      const storedUsername = localStorage.getItem("username");
+      if (storedUsername) {
+        setUsername(JSON.parse(storedUsername));
+      }
+    }, []);
+
     let Photo="";
     const [val, setVal] = useState({
         Admin:"",
@@ -63,11 +72,11 @@ const Staff_Registration = () => {
      e.preventDefault();
 
   try {
-    const res = await axios.post("http://localhost:3002/api/addstaff", { ...val, photo: Photo });
+    const res = await axios.post("http://localhost:3002/api/addstaff", { ...val, photo: Photo,Admin:username });
 
     if (res.status === 201) {
-      alert("Successfully Registered");
-    //   navigate("/Adminlogin")
+    //   alert("Successfully Registered");
+      navigate("/staff_full_view")
     } else {
       alert("Data Not Added");
     }
@@ -98,12 +107,13 @@ const Staff_Registration = () => {
                         <form>
 
                             <div className='head-staff'><h4>Staff Registartion</h4></div>
+                            
                            
 
                             <div className="form-group12-staffs">
 
-                                <div className='Admin'> <label htmlFor="username" id='label-staff'></label>
-                                <input type="text" id="empi" name="Admin" placeholder='Admin' onChange={Getdata} required /></div>
+                                {/* <div className='Admin'> <label htmlFor="username" id='label-staff'></label>
+                                <input type="text" id="empi" name="Admin" placeholder='Admin' onChange={Getdata} required /></div> */}
 
                            
 

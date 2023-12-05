@@ -29,7 +29,7 @@ function App() {
     <Route path='/Staff_home' Component={Staff_home}/>
     <Route path='/staff_full_view' Component={Staffview}/>
     <Route path='/Sperateview/:id' Component={Sperateview}/>
-    <Route path='/Edit_staff' Component={Edit_staff}/>
+    <Route path='/Edit_staff/:id' Component={Edit_staff}/>
     
 
 

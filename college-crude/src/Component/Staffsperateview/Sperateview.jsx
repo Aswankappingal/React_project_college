@@ -93,7 +93,7 @@ const Sperateview = () => {
 
 
 
-          <div className='btn-staff-edit'><Link className='linkkks' to='/Edit_staff' ><button>Edit Now</button></Link></div>
+          <div className='btn-staff-edit'><Link className='linkkks' to={`/Edit_staff/${getview._id}`} ><button>Edit Now</button></Link></div>
         </div>
 
 

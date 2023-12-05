@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Adminhome.css'
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
 const Adminhome = () => {
-  const location = useLocation();
-  const username = location.state && location.state.username;
+  // const location = useLocation();
+  // const username = location.state && location.state.username;
+
+  const [username, setUsername] = useState("");
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(JSON.parse(storedUsername));
+    }
+  }, []);
 
 
 
