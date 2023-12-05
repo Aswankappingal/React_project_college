@@ -11,6 +11,8 @@ import Staff_home from './Component/Staff_home/Staff_home'
 import Sperateview from './Component/Staffsperateview/Sperateview'
 import Staffview from './Component/Staff_View/Staffview'
 import Edit_staff from './Component/Edit_Staff/Edit_staff'
+import Staffforgotusername from './Component/StaffForgot_username/Staffforgotusername'
+import StaffForgotPwd from './Component/Staff_Forgot_Pwd/StaffForgotPwd'
 
 function App() {
  
@@ -30,6 +32,8 @@ function App() {
     <Route path='/staff_full_view' Component={Staffview}/>
     <Route path='/Sperateview/:id' Component={Sperateview}/>
     <Route path='/Edit_staff/:id' Component={Edit_staff}/>
+    <Route path='/Forgotusername' Component={Staffforgotusername}/>
+    <Route path='/Forgotpassword' Component={StaffForgotPwd}/>
     
 
 

@@ -61,6 +61,13 @@ export function addUser(req,res)
    }
     
 }
+export async function forgotUsername(req,res){
+    const phone=req.params;
+    console.log(phone);
+    let task=await Staff_schema.findOne(phone)
+    console.log(task);
+    res.status(200).send(task)
+}
 
 
 
