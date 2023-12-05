@@ -13,6 +13,7 @@ router.route("/delstaff/:id").delete(controller.del_staff);
 router.route("/getstaff_detail_one/:id").post(controller.getStaff_Details);
 router.route("/editstaff/:id").patch(controller.edit_staff);
 router.route("/forgotusername/:phone").get(controller.forgotUsername);
+router.route("/forgotepwd/:phone").patch(controller.staffFrgtPwd);
 
 
 

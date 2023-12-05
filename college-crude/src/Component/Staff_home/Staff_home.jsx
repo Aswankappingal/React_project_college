@@ -13,7 +13,7 @@ const Staff_home = () => {
   }, []);
   return (
     <div>
-         <div className='staff-home-user'> Staff Name :{username}</div>
+         {/* <div className='staff-home-user'> Admin Name :</div>{username} */}
         <h1 className='Staff_home'>Staff home</h1>
       
     </div>

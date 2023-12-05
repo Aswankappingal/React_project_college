@@ -61,12 +61,23 @@ export function addUser(req,res)
    }
     
 }
+/////// forgot username////
 export async function forgotUsername(req,res){
     const phone=req.params;
     console.log(phone);
     let task=await Staff_schema.findOne(phone)
     console.log(task);
     res.status(200).send(task)
+}
+////// forgot password ////
+export async function staffFrgtPwd(req, res) {
+    const phone = req.params.phone;
+    const updatedPassword = req.body.password;
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(updatedPassword, saltRounds);
+    let task = await Staff_schema.updateOne({ phone }, { $set: { password: hashedPassword } });
+    
+    res.status(200).send(task);
 }
 
 
@@ -113,6 +124,7 @@ export async function login(req, res) {
          
         }
        }
+       
 
 
    export async function home(req,res){
