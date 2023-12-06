@@ -13,6 +13,8 @@ import Staffview from './Component/Staff_View/Staffview'
 import Edit_staff from './Component/Edit_Staff/Edit_staff'
 import Staffforgotusername from './Component/StaffForgot_username/Staffforgotusername'
 import StaffForgotPwd from './Component/Staff_Forgot_Pwd/StaffForgotPwd'
+import StudentRegister from './Component/StudentRegister/StudentRegister'
+import Studentview from './Component/Studentview/Studentview'
 
 function App() {
  
@@ -34,6 +36,8 @@ function App() {
     <Route path='/Edit_staff/:id' Component={Edit_staff}/>
     <Route path='/Forgotusername' Component={Staffforgotusername}/>
     <Route path='/Forgotpassword' Component={StaffForgotPwd}/>
+    <Route path='/Student_register' Component={StudentRegister}/>
+    <Route path='/Studentview' Component={Studentview}/>
     
 
 

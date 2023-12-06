@@ -26,6 +26,7 @@ const Staff_login = () => {
       if (response.status !== 404) {
         const token = data.token;
         localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("username", JSON.stringify(username));
         navigate("/Staff_home", { state: { username } });
       } else {
         alert(data.msg);

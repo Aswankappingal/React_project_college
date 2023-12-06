@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Adminregistration = () => {
   const navigate = useNavigate()
@@ -21,6 +23,21 @@ const Adminregistration = () => {
     setval((pre) => ({ ...pre, [e.target.name]: e.target.value }))
 
   }
+  ///////Toast message //////
+  const sucess=()=>
+    toast.success("Registartion is sucessfull",{
+      position:"top-right",
+      autoClose:2500,
+      hideProgressBar:false,
+      closeOnClick:true,
+      pauseOnHover:true,
+      draggable:true,
+      progress:undefined,
+      theme:"dark"
+
+
+    })
+  
 
   const RegisterData = async (e) => {
     e.preventDefault();
@@ -35,7 +52,11 @@ const Adminregistration = () => {
     }
     else {
       // alert("Data Added SuccessFully")
-      navigate("/Adminlogin")
+      sucess()
+      setTimeout(()=>{
+        navigate("/Adminlogin")
+      },3000)
+     
     }
   }
 
@@ -57,6 +78,20 @@ const Adminregistration = () => {
               <input type="email" name="username" placeholder="username" id='inputt' onChange={getData} required=""></input>
               <input type="password" name="password" placeholder="Password" id='inputt' onChange={getData} required=""></input>
               <button id='btn' onClick={RegisterData}>Sign up</button>
+
+              <ToastContainer
+                position="top-right"
+                autoClose={2500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme='dark'
+
+                />
               <Link to='/Adminlogin' className='linker' ><span id='Sign'>Alredy You have Account?</span></Link>
 
             </form>

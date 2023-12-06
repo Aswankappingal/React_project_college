@@ -1,5 +1,6 @@
 import Staff_schema from './staff.model.js'
 import Admin_schema from "./user.model.js"
+import Student_schema from "./student.model.js"
 import bcrypt from "bcrypt";
 import pkg from "jsonwebtoken";
 const {sign}=pkg;
@@ -32,6 +33,36 @@ export function addStaff(req,res)
    }
     
 }
+
+
+
+export function addStudent(req,res)
+{
+    
+   try {
+    const {staff,admission_id,fullname,username,password,email,phonenumber,adress,attendance,batch,date,Internal_physics,Internal_maths,Internal_chemistry,Test_physics,Test_maths,Test_chemistry,course,semester,photo}=req.body;
+    console.log(staff,admission_id,fullname,username,password,email,phonenumber,adress,attendance,batch,date,Internal_physics,Internal_maths,Internal_chemistry,Test_physics,Test_maths,Test_chemistry,course,semester,photo);
+    if(!(staff&&admission_id&&fullname&&username&&password&&email&&phonenumber&&adress&&attendance&&batch&&date&&Internal_physics&&Internal_maths&&Internal_chemistry&&Test_physics&&Test_maths&&Test_chemistry&&course&&semester,photo))
+    return res.status(404).send("fields are empty")
+    console.log(req.body);
+    bcrypt.hash(password,10)
+    .then((hashedPwd)=>{
+        Student_schema.create({staff,admission_id,fullname,username,password:hashedPwd,email,phonenumber,adress,attendance,batch,date,Internal_physics,Internal_maths,Internal_chemistry,Test_physics,Test_maths,Test_chemistry,course,semester,photo});
+    })
+    .then(()=>{
+        res.status(201).send("sucessfully registered")
+    })
+  .catch((error)=>{
+    res.status(500).send(error)
+   })
+    
+   } catch (error) {
+    console.log(error);
+    
+   }
+    
+}
+
 
 
 
@@ -150,6 +181,21 @@ export async function Staff_getdata(req,res){
 
 }
 
+export async function Student_getdata(req,res){
+    let task=await Student_schema.find()
+        res.status(200).send(task)
+    
+
+}
+
+
+
+
+
+
+
+
+
 export async function getStaff_Details(req,res){
     const{id}=req.params;
     console.log(id);
@@ -163,6 +209,17 @@ export function del_staff(req,res)
 {
     const{id}=req.params;
     const data=Staff_schema.deleteOne({_id:id})
+    data.then((resp)=>{
+        res.status(200).send(resp)
+    }).catch((error)=>{
+        res.status(404).send(error)
+    })
+}
+
+export function del_student(req,res)
+{
+    const{id}=req.params;
+    const data=Student_schema.deleteOne({_id:id})
     data.then((resp)=>{
         res.status(200).send(resp)
     }).catch((error)=>{

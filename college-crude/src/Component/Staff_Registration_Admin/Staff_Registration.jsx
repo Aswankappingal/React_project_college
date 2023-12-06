@@ -6,6 +6,7 @@ import axios from 'axios'
 
 const Staff_Registration = () => {
   const navigate = useNavigate()
+  const navigatebtn = useNavigate()
 
   const [username, setUsername] = useState("");
   useEffect(() => {
@@ -84,6 +85,10 @@ const Staff_Registration = () => {
       alert("error", error);
     }
   };
+  const Logout = async (e) => {
+    e.preventDefault
+    navigatebtn("/Adminlogin")
+  }
 
 
 
@@ -106,7 +111,14 @@ const Staff_Registration = () => {
           <div className="signup-staff">
             <form>
 
-              <div className='head-staff'><h4>Staff Registartion</h4></div>
+              <div className='head-staff'><h4>Staff Registartion </h4></div>
+              <div className="admin-main-name">
+                <div className='Admin-name-only'>
+                  <i className="fa fa-user" aria-hidden="true"></i><span>{username}</span>
+                  <button className='btn-log' onClick={Logout}>Logout</button>
+
+                </div>
+              </div>
 
 
 

@@ -1,0 +1,96 @@
+.whole-data-student-reg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+
+  }
+  .Main-part-student-reg{
+    width: 780px;
+    height: 840px;
+    background: red;
+    overflow: hidden;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 40px #000;
+    margin-bottom: 40px;
+  }
+  .signup-student{
+    position: relative;
+    width:100%;
+    height: 100%;
+ 
+  }
+  .head-student h5{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 29px;
+  }
+  .inputs-whole{
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+  
+  }
+  .inputs-whole input{
+    margin-top: 34px;
+    margin-left: 20px;
+    border-radius: 7px;
+    padding: 4px 30px;
+    width: 30%;
+
+  }
+  .inputs-whole select{
+    margin-top: 40px;
+    padding: 2px 20px;
+    width: 25%;
+    
+  }
+  .inputs-whole button:hover{
+    background: #6d44b8;
+
+  }
+ .inputs-whole button{
+    margin-top: 30px !important;
+    width: 30%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+ }
+ .inputs-whole label{
+    color: aliceblue;
+  
+ }
+ .inputs-whole option{
+    margin-left: 40px;
+ }
+ #course{
+    margin-left: 20px;
+    border-radius: 5px;
+
+ }
+ #semster{
+    margin-left: 15px;
+    border-radius: 10px;
+
+ }
+ .ppphotos input{
+    background-color: aliceblue;
+    border: 1px solid rgb(227, 227, 227);
+    padding: 1px 50px;
+    width: 48%;
+
+ }
+  

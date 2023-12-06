@@ -39,11 +39,14 @@ body{
    .form-group12-staffs{
     text-align: center;
     margin-top: 30px;
+   
    }
    .form-group12-staffs input{
     margin-left: 20px;
     padding: 3px;
-    border-radius: 2px;
+    border-radius: 6px;
+    background-color: rgb(206, 204, 204);
+    border: none;
    }
   .form-group12-staffs-last{
     text-align: center;
@@ -53,14 +56,22 @@ body{
   .form-group12-staffs-last input{
     margin-left: 20px;
     padding: 5px;
+    background-color: rgb(206, 204, 204);
+    border-radius: 6px;
+  }
+  .form-group12-staffs-last::placeholder{
+    margin-left: 60px;
+
   }
   .Admin{
     margin-bottom: 20px;
+    background-color: rgb(206, 204, 204);
+    border: none;
   }
 
 
   #change-photo{
-    background-color: aliceblue;
+    background-color: rgb(206, 204, 204);
     border: 1px solid white;
     border-radius: 4px;
   }
@@ -88,3 +99,38 @@ body{
   #btn-staff:hover{
     background: #6d44b8;
   }
+  .admin-main-name{
+    display: flex;
+    justify-content: right;
+
+  }
+.Admin-name-only{
+  border: 1px solid rgb(67, 15, 91);
+  width: 26%;
+  background-color: rgb(40, 9, 101);
+  height: 40px;
+  border-radius: 20px;
+
+}
+.Admin-name-only span{
+  color: white;
+  margin-left: 20px;
+  margin-top: 9px;
+  font-weight: 600;
+}
+.Admin-name-only i{
+  color: white;
+  margin-left: 20px;
+  margin-top: 8px;
+  font-size: 22px;
+  font-weight: 400;
+
+}
+.btn-log{
+  color: #fff;
+  background: #49268e;
+  border: 1px solid #49268e;
+  margin-left: 20px;
+  border-radius: 4px;
+  
+}

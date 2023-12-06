@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Adminhome.css'
 // import { useLocation } from 'react-router-dom';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Adminhome = () => {
   // const location = useLocation();
@@ -21,21 +21,24 @@ const Adminhome = () => {
     <div>
 
 
-          <div className='admin-home-user'> Admin :{username}</div>
-          <div className='Iss'><h4>Admin Home</h4></div> 
-        <div className="full-button-carder-Admin">
-         <div><Link to='/Staff_Registartion' id='Linksss'><button className="button-83-Admin" role="button">Staff Registartion</button></Link></div>
-         <div><Link to='/staff_full_view' id='Linksss'><button className="button-83-Admin" role="button">Staff View</button></Link></div>
-         <div><button className="button-83-Admin" role="button">Student View</button></div>
+      <div className='admin-home-user-main'>
+        <div className='admin-home-user'><i className="fa fa-user" aria-hidden="true"></i><span>{username}</span>
         </div>
+      </div>
+      <div className='Iss'><h4>Admin Home</h4></div>
+      <div className="full-button-carder-Admin-s">
+        <div><Link to='/Staff_Registartion' id='Linksss'><button className="button-83-Admin" role="button">Staff Registartion</button></Link></div>
+        <div><Link to='/staff_full_view' id='Linksss'><button className="button-83-Admin" role="button">Staff View</button></Link></div>
+        <div><button className="button-83-Admin" role="button">Student View</button></div>
+      </div>
 
 
 
-          
 
-        
-          
-          
+
+
+
+
 
 
 
