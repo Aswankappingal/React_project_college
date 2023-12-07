@@ -40,14 +40,14 @@ export function addStudent(req,res)
 {
     
    try {
-    const {staff,admission_id,fullname,username,password,email,phonenumber,adress,attendance,batch,date,Internal_physics,Internal_maths,Internal_chemistry,Test_physics,Test_maths,Test_chemistry,course,semester,photo}=req.body;
-    console.log(staff,admission_id,fullname,username,password,email,phonenumber,adress,attendance,batch,date,Internal_physics,Internal_maths,Internal_chemistry,Test_physics,Test_maths,Test_chemistry,course,semester,photo);
-    if(!(staff&&admission_id&&fullname&&username&&password&&email&&phonenumber&&adress&&attendance&&batch&&date&&Internal_physics&&Internal_maths&&Internal_chemistry&&Test_physics&&Test_maths&&Test_chemistry&&course&&semester,photo))
+    const {staff,admission_id,fullname,username,password,email,phonenumber,adress,attendance,batch,date,internal,test,course,semester,photo}=req.body;
+    console.log(staff,admission_id,fullname,username,password,email,phonenumber,adress,attendance,batch,date,internal,test,course,semester,photo);
+    if(!(staff&&admission_id&&fullname&&username&&password&&email&&phonenumber&&adress&&attendance&&batch&&date&&internal&&test&&course&&semester,photo))
     return res.status(404).send("fields are empty")
     console.log(req.body);
     bcrypt.hash(password,10)
     .then((hashedPwd)=>{
-        Student_schema.create({staff,admission_id,fullname,username,password:hashedPwd,email,phonenumber,adress,attendance,batch,date,Internal_physics,Internal_maths,Internal_chemistry,Test_physics,Test_maths,Test_chemistry,course,semester,photo});
+        Student_schema.create({staff,admission_id,fullname,username,password:hashedPwd,email,phonenumber,adress,attendance,batch,date,internal,test,course,semester,photo});
     })
     .then(()=>{
         res.status(201).send("sucessfully registered")
