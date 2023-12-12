@@ -85,8 +85,8 @@ const Staff_Registration = () => {
       alert("error", error);
     }
   };
-  const Logout = async (e) => {
-    e.preventDefault
+  const Logout = () => {
+    localStorage.clear();
     navigatebtn("/Adminlogin")
   }
 

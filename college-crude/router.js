@@ -14,7 +14,9 @@ router.route("/studentgetdata").get(controller.Student_getdata);
 router.route("/delstaff/:id").delete(controller.del_staff);
 router.route("/delstudent/:id").delete(controller.del_student);
 router.route("/getstaff_detail_one/:id").post(controller.getStaff_Details);
+router.route("/getstaff_student_one/:id").post(controller.getStudent_Details);
 router.route("/editstaff/:id").patch(controller.edit_staff);
+router.route("/editstudent/:id").patch(controller.edit_student);
 router.route("/forgotusername/:phone").get(controller.forgotUsername);
 router.route("/forgotepwd/:phone").patch(controller.staffFrgtPwd);
 

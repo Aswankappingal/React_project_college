@@ -64,6 +64,20 @@ const StudentRegister = () => {
 
   }
 
+  const GetTestmark=(e)=>{
+    setVal((pre) => ({ ...pre,test:{...pre.test,[e.target.name]: e.target.value},}));
+
+
+  }
+
+   const GetInternalMark=(e)=>{
+    setVal((pre) => ({ ...pre,internal:{...pre.internal,[e.target.name]: e.target.value},}));
+
+
+  }
+
+  
+
 
   function convertToBase64(file) {
     return new Promise((resolve, reject) => {
@@ -146,18 +160,18 @@ const StudentRegister = () => {
 
                 <div>
                   <label htmlFor="exam_score_physics">Internal Score:</label>
-                  <input type="text" id="exam_score_physics" name="Internal_physics" onChange={Getdata} placeholder='Physics' required />
+                  <input type="text" id="exam_score_physics" name="Internal_physics" onChange={GetInternalMark} placeholder='Physics' required />
 
-                  <input type="text" id="exam_score_maths" name="Internal_maths" onChange={Getdata} placeholder='Maths' required />
-                  <input type="text" id="exam_score_chemistry" name="Internal_chemistry" onChange={Getdata} placeholder='chemistry' required />
+                  <input type="text" id="exam_score_maths" name="Internal_maths" onChange={GetInternalMark} placeholder='Maths' required />
+                  <input type="text" id="exam_score_chemistry" name="Internal_chemistry" onChange={GetInternalMark} placeholder='chemistry' required />
                 </div>
 
                 <div>
                   <label htmlFor="exam_score_physics">Test Scores:</label>
-                  <input type="text" id="exam_score_physics" name="Test_physics" onChange={Getdata} placeholder='Physics' required />
+                  <input type="text" id="exam_score_physics" name="Test_physics" onChange={GetTestmark} placeholder='Physics' required />
 
-                  <input type="text" id="exam_score_maths" name="Test_maths" onChange={Getdata} placeholder='Maths' required />
-                  <input type="text" id="exam_score_chemistry" name="Test_chemistry" onChange={Getdata} placeholder='chemistry' required />
+                  <input type="text" id="exam_score_maths" name="Test_maths" onChange={GetTestmark} placeholder='Maths' required />
+                  <input type="text" id="exam_score_chemistry" name="Test_chemistry" onChange={GetTestmark} placeholder='chemistry' required />
                 </div>
 
 

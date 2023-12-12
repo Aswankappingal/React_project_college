@@ -57,7 +57,7 @@ const Studentview = () => {
                                 <h2>{data.fullname}</h2>
                                 <h4>{data.admission_id}</h4>
                                 <div className="admin-staff-view-delete-btn">
-                                    <Link className='admin-staff-view-btn-link' to={`#`}><button className='admin-staff-view-btn'>View</button></Link>
+                                    <Link className='admin-staff-view-btn-link' to={`/Student_sperate/${data._id}`}><button className='admin-staff-view-btn'>View</button></Link>
                                     <Link to={`#${data._id}`} onClick={() => deletestu(data._id)} className='Links'><button className='admin-staff-delete-btn'>Delete</button></Link>
 
                                 </div>

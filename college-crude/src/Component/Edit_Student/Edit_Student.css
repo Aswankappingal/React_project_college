@@ -1,0 +1,41 @@
+
+.Admin-edit{
+    margin-bottom: 20px;
+  }
+  .images-edit{
+    background-color: rgb(232, 222, 222);
+    height: 150px;
+    width: 30%;
+    text-align: center;
+    margin-left: 36%;
+   margin-top: 20px;
+  }
+  .images-edit img{
+    width: 40%;
+    height: 100px;
+    margin-top: 10px;
+  }
+  #change-photo-edit{
+    width: 90%;
+    text-align: center;
+  }
+  .Main-edit-student{
+    width: 790px;
+    height: 940px;
+    background: red;
+    /* overflow: hidden; */
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+  }
+  #label-student label{
+    color: white;
+  }
+  .internal_edit label{
+    color: azure;
+    margin-left: 20%;
+    margin-top: 20px;
+  }
+  .input_edit_student input{
+    margin-left: 40%;
+  }

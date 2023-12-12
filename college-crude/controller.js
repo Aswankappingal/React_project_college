@@ -205,6 +205,24 @@ export async function getStaff_Details(req,res){
 }
 
 
+export async function getStudent_Details(req,res){
+    const{id}=req.params;
+    console.log(id);
+    let staff= await Student_schema.findOne({_id:id});
+    console.log(staff);
+    res.status(200).send(staff)
+}
+
+
+
+
+
+
+
+
+
+
+
 export function del_staff(req,res)
 {
     const{id}=req.params;
@@ -234,6 +252,14 @@ export function del_student(req,res)
     const{id}=req.params;
     const{...movie}=req.body;
      await Staff_schema.updateOne({_id:id},{$set:{...movie}});
+    console.log(movie);
+    res.status(200).send("updated")
+}
+
+export async function edit_student(req,res){
+    const{id}=req.params;
+    const{...movie}=req.body;
+     await Student_schema.updateOne({_id:id},{$set:{...movie}});
     console.log(movie);
     res.status(200).send("updated")
 }

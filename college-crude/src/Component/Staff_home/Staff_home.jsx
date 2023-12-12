@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Staff_home.css'
-import { Link } from 'react-router-dom';
-// import { useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 const Staff_home = () => {
@@ -12,11 +12,20 @@ const Staff_home = () => {
       setUsername(JSON.parse(storedUsername));
     }
   }, []);
+  
+  const navigate = useNavigate()
+
+
+
+  const Logout=()=>{
+    localStorage.clear();
+    navigate("/Staff_login")
+  }
   return (
     <div>
       <div className='Staff-name-only-home'>
         <i className="fa fa-user" aria-hidden="true"></i><span>{username}</span>
-        <button className='btn-log-staff'>Logout</button>
+        <button className='btn-log-staff' onClick={Logout}>Logout</button>
 
       </div>
        <div className='Iss'><h4>Staff Home</h4></div>

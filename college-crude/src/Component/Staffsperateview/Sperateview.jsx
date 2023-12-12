@@ -40,7 +40,7 @@ const Sperateview = () => {
 
             <div><label ></label></div>
             <div className='right-data'><span> Address : {getview.adress}</span></div>
-   
+
 
             <div><label ></label></div>
             <div className='right-data'><span>Emp-Id : {getview.empid}</span></div>

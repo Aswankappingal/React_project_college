@@ -80,3 +80,9 @@
     margin-left: 10px;
 
 }
+.btn-logout{
+    background-color: #3a2082;
+    color: #e5e7eb;
+    border: none;
+    padding: 0px 10px;
+}
