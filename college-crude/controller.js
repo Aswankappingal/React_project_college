@@ -155,6 +155,27 @@ export async function login(req, res) {
          
         }
        }
+
+ ////// student login    ///
+      export async function Student_login(req, res) {
+        try {
+         console.log(req.body);
+         const { admission_id, date } = req.body;
+         const usr = await Student_schema.findOne({ admission_id })
+         console.log(usr);
+         if (usr === null) return res.status(404).send("username or password doesnot exist");
+
+         if (date !== usr.date) return res.status(404).send("username or password doesnot exist");
+         const token = await sign({ admission_id }, process.env.JWT_KEY, { expiresIn: "24h" })
+         console.log(token);
+         res.status(200).send({ msg: "successfullly login", token })
+         res.end();
+         
+        } catch (error) {
+         console.log(error);
+         
+        }
+       }
        
 
 

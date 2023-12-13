@@ -17,6 +17,9 @@ import StudentRegister from './Component/StudentRegister/StudentRegister'
 import Studentview from './Component/Studentview/Studentview'
 import Student_Sperateview from './Component/Student_Sperate_view/Student_Sperateview'
 import Edit_Student from './Component/Edit_Student/Edit_Student'
+import Mainpage from './Component/Admin/Mainpage'
+import Student_login from './Component/Student_login/Student_login'
+import Student_Home from './Component/Student_Home/Student_Home'
 
 function App() {
  
@@ -24,9 +27,10 @@ function App() {
   return (
     <>
    <BrowserRouter>
-   <Navbar/>
+   {/* <Navbar/> */}
    <Routes>
-    <Route path='/' Component={Home}/>
+   <Route path='/' Component={Mainpage}/>
+    <Route path='/admin' Component={Home}/>
     <Route path='/Adminlogin' Component={Adminlogin}/>
     <Route path='/Adminregistration' Component={Adminregistration}/>
     <Route path='/Adminhome' Component={Adminhome}/>
@@ -42,6 +46,8 @@ function App() {
     <Route path='/Student_register' Component={StudentRegister}/>
     <Route path='/Studentview' Component={Studentview}/>
     <Route path='/Student_sperate/:id' Component={Student_Sperateview}/>
+    <Route path='/Student_login' Component={Student_login}/>
+    <Route path='/Student_home' Component={Student_Home}/>
     
 
 
