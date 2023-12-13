@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import axios from 'axios'
+import './Student_home.css'
 
 const Student_Home = () => {
 
@@ -14,23 +15,20 @@ const Student_Home = () => {
     navigate("/Student_login")
   }
 
-  const [admission_id,setadmission_id] = useState("");
-  useEffect(() => {
-    const storedadmission_id = localStorage.getItem("admission_id");
-    if (storedadmission_id) {
-      setadmission_id(JSON.parse(storedadmission_id));
-    }
-  }, []);
+  // const [admission_id,setadmission_id] = useState("");
 
-   const[student,setStudent]=useState('')
+
+   const[student,setStudent]=useState({})
 
   const FullData = async () => {
     try { 
-      const key= localStorage.key(0);
-      const value=JSON.parse(localStorage.getItem(key));
-      const res = await axios.get(`http://localhost:3002/api/getdetsilsloginedstudent`, { headers: {Authorization: `Bearer ${value}` }});
+      // const key= localStorage.key(0);
+      const value=JSON.parse(localStorage.getItem('stud_token'));
+      console.log(value);
+      const res = await axios.get(`http://localhost:3002/api/getdetsilsloginedstudent`, { headers: {Authorization: `Bearer ${value}` },});
+      console.log(res.data.task);
       setStudent(res.data.task);
-      console.log(student.fullname);
+      // console.log(student.fullname);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -105,9 +103,11 @@ const Student_Home = () => {
 
       <div className='Staff-name-only-home'>
         <i className="fa fa-user" aria-hidden="true"></i><span>{student.fullname}</span>
-        <button className='btn-log-student' onClick={Logout}>Logout</button>
+        <button className='btn-log-student-logout' onClick={Logout}>Logout</button>
+        
 
       </div>
+       <div className='Back'><Link  to={'/Student_login'} ><button>back</button></Link></div>
 
 
 
@@ -163,15 +163,15 @@ const Student_Home = () => {
                             <div className='internal_edit'>
                                 <label htmlFor="username" id=''>Internal mark : </label>
                                 <div className='input_edit_student'>
-                                    <input type="text" id="phone" name="Internal_physics" placeholder='Internal Physics'  required />
-                                    <input type="text" id="phone" name="Internal_maths" placeholder='Internal Physics'   required />
-                                    <input type="text" id="phone" name="Internal_chemistry" placeholder='Internal Physics'  required />
+                                    <input type="text" id="phone" name="Internal_physics" placeholder='Internal Physics' value={student?.internal?.Internal_physics}  required />
+                                    <input type="text" id="phone" name="Internal_maths" placeholder='Internal Physics' value={student?.internal?.Internal_maths}   required />
+                                    <input type="text" id="phone" name="Internal_chemistry" placeholder='Internal Physics' value={student?.internal?.Internal_chemistry}   required />
                                 </div>
                                 <label htmlFor="username" id=''>Test mark : </label>
 
                                 <div className='input_edit_student'>
-                                    <input type="text" id="phone" name="Test_physics" placeholder='Internal Physics'  required />
-                                    <input type="text" id="phone" name="Test_maths" placeholder='Internal Physics' required />
+                                    <input type="text" id="phone" name="Test_physics" placeholder='Internal Physics'  value={student?.test?.Test_maths}  required />
+                                    <input type="text" id="phone" name="Test_maths" placeholder='Internal Physics' value={student?.test?.Test_physics} required />
                                     <input type="text" id="phone" name="Test_chemistry" placeholder='Internal Chemistry' value={student?.test?.Test_chemistry} required />
                                 </div>
 

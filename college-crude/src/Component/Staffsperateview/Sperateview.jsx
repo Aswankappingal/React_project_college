@@ -29,8 +29,10 @@ const Sperateview = () => {
 
     <div>
 
-      <form action="" >
+      
 
+      <form action="" >
+      
         <div className="registration-left-main row">
           <h6>STAFF FULL DETAILS</h6>
           <div className="sign-in-form-input col-lg-4 col-md-4 col-sm-12">

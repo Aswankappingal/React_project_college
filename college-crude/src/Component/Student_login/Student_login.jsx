@@ -12,42 +12,45 @@ const Student_login = () => {
    
     const navigate = useNavigate()
 
-
     const handleLogin_student = async (e) => {
-        e.preventDefault()
-        try {
-          console.log(admission_id,date);
-          const response = await axios.post(`http://localhost:3002/api/loginstudent`,{
-            admission_id: admission_id,
-            date:date
-          } );
+      e.preventDefault();
+      try {
+          // console.log(admission_id, date);
+          const response = await axios.post(`http://localhost:3002/api/loginstudent`, {
+              admission_id: admission_id,
+              date: date,
+          });
+  
           const data = response.data;
           console.log(data.token);
-    
+  
           if (response.status !== 404) {
-            const token = data.token;
-            localStorage.setItem("token", JSON.stringify(token));
-          (setTimeout(()=>{
-                // navigate("/Student_home");
-            },3000),{ state: { admission_id } });
-            } else {
-            alert(data.msg);
-            }
-          } catch (error) {
-            alert("Student ID Or Date Of Birth Incorrect");
+              const stud_token = data.token;
+              localStorage.setItem("stud_token", JSON.stringify(stud_token));
+              
+              // Navigate immediately after setting the token
+              navigate("/Student_home");
+          } else {
+              alert(data.msg);
           }
-      };
-
+      } catch (error) {
+          alert("Student ID Or Date Of Birth Incorrect");
+      }
+  };
+  
 
 
     return (
         <div>
+       
 
             <div className="fullerr-staff-login">
                 <div className="main-staff-login">
                     <div className="signup-staff-login">
-
+                   
                         <form>
+                        <div className='Back'><Link  to={'/'} ><button>back</button></Link></div>
+
                             <label htmlFor="chk" id='labelll' aria-hidden="true">Student Login</label>
                             <div className='usr'><input type="email" className='one-input-staff' name="admission_id" onChange={(e) =>setadmission_id(e.target.value)} placeholder="admission_id" required="" />
 

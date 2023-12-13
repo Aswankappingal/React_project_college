@@ -1,0 +1,16 @@
+.btn-log-student-logout{
+    background-color: rgba(14, 14, 95, 0.762);
+    margin-left: 20px ;   
+    border: none;
+    color: white;
+    padding: 5px 20px;
+}
+.Back button{
+    background-color: rgb(28, 41, 112);
+    margin-left: 20px;
+    margin-top: 5px;
+    padding: 0px 30px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
