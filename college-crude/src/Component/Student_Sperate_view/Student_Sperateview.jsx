@@ -137,6 +137,7 @@ const Student_Sperateview = () => {
 
                         <div className='email2'><span> Email : {getviews.email}</span></div>
                         <div><label ></label></div>
+                        
                         <div className='phone2'><span> Adress : {getviews.adress}</span></div>
                        
                         <div className='phone2'><span> Semster : {getviews.semester}</span></div>

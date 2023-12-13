@@ -159,17 +159,19 @@ export async function login(req, res) {
  ////// student login    ///
       export async function Student_login(req, res) {
         try {
-         console.log(req.body);
+        //  console.log(req.body);
          const { admission_id, date } = req.body;
-         const usr = await Student_schema.findOne({ admission_id })
-         console.log(usr);
-         if (usr === null) return res.status(404).send("username or password doesnot exist");
+         
+         const usr = await Student_schema.findOne({ admission_id:admission_id })
+       console.log(usr.fullname);
+          if (usr === null) return res.status(404).send("username or password doesnot exist");
 
-         if (date !== usr.date) return res.status(404).send("username or password doesnot exist");
-         const token = await sign({ admission_id }, process.env.JWT_KEY, { expiresIn: "24h" })
-         console.log(token);
-         res.status(200).send({ msg: "successfullly login", token })
-         res.end();
+          if (date !== usr.date) return res.status(404).send("username or password doesnot exist");
+        const{_id}=usr
+      const stud_token =  sign({ _id }, process.env.JWT_KEY, { expiresIn: "24h" })
+             console.log(stud_token);
+          res.status(200).send({ msg: "successfullly login", stud_token })
+        
          
         } catch (error) {
          console.log(error);
@@ -224,6 +226,18 @@ export async function getStaff_Details(req,res){
     console.log(staff);
     res.status(200).send(staff)
 }
+
+
+export async function GetDtsilsLoginedStudent(req,res){
+    console.log(req);
+     let task=await Student_schema.findOne()
+     console.log(task);
+     res.status(200).send({task})
+ }
+
+
+
+
 
 
 export async function getStudent_Details(req,res){

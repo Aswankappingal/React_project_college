@@ -11,6 +11,7 @@ router.route("/addstudent").post(controller.addStudent);
 router.route("/loginstaff").post(controller.Staff_login);
 
 router.route("/loginstudent").post(controller.Student_login);
+router.route("/getdetsilsloginedstudent").get(Auth,controller.GetDtsilsLoginedStudent);
 
 router.route("/staffgetdata").get(controller.Staff_getdata);
 router.route("/studentgetdata").get(controller.Student_getdata);
