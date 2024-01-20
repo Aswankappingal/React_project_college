@@ -171,7 +171,7 @@ const Student_Sperateview = () => {
                             <div><span id='intern'> Che   :  {getviews?.internal?.Internal_chemistry}</span></div>
 
 
-                            <div className='right-data'><span>Attandence  :  {attendance !== undefined ? `${attendance}%` : 'loading...'}</span></div>
+                            <div className='right-data'><span>Attandence  : {((getviews.attendance /200)*100)<75?`${((getviews.attendance /200)*100)}% Must Pay Condonation`:`${((getviews.attendance /200)*100)}%`}</span></div>
                             
                            
 
