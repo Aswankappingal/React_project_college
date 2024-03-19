@@ -59,7 +59,7 @@ const Student_login = () => {
                             <div className='pwd'><input type="password" className='one-input-staff' name="date" placeholder="date" onChange={(e) =>setdate(e.target.value)}  required="" /></div>
                             {/* <div className='Links-login-only'><Link className='Fort' to='/Forgotusername'>Forgot Username</Link>
                                 <Link className='Fort' to='/Forgotpassword'>Forgot Password</Link></div> */}
-                            <button id='btn-staff-logined' onClick={handleLogin_student} >Login</button>
+                            <button id='btn-staff-login' onClick={handleLogin_student} >Login</button>
 
 
 
